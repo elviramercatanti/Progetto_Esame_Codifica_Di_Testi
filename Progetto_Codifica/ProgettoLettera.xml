@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ProgettoLettera.xsl" ?>
+
+<!--
+    Author:Elvira Mercatanti
+    Title: Codifica lettera LL1.12
+    ?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" schematypens="http://relaxng.org/ns/structure/1.0"?
+-->
+
+
+
+<!DOCTYPE TEI SYSTEM "tei_all.dtd">
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+
+    <teiHeader>
+
+        <fileDesc>
+            <titleStmt>
+                    <title> Vincenzo Bellini a destinatario sconosciuto, in Parigi, 23 agosto 1833</title>
+                    <!--mittente, destinatario, luogo e data di scrittura della lettera-->
+
+                    <author ref="TEI-ListPerson.xml#VB"> Vincenzo Bellini</author>                    
+
+                    <respStmt>
+                        <resp> Transcription by</resp>
+                        <name ref="#GS"> Graziella Seminara </name>
+                    </respStmt>
+            </titleStmt>
+
+
+
+            <editionStmt>
+                    <edition> Digital Edition 
+                        <date when="2018-05"> May 2018</date>
+                    </edition>
+
+                    <respStmt>
+                            <resp>Digital edition project coordinated by</resp>
+                            <name ref="#AMDG"> Angelo Mario Del Grosso</name>
+                            <name ref="#DS"> Daria Spampinato</name>
+                            
+                    </respStmt>
+
+                    <respStmt>
+                        <resp> Encoding by</resp>
+                        <name ref="#EM">Elvira Mercatanti</name>
+                        <note>La codifica è stata realizzata per l'esame di Codifica di Testi</note>
+                    </respStmt>
+            </editionStmt>
+
+
+
+            <publicationStmt>
+
+                    <publisher> Fondazione Bellini</publisher> 
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0/"> CC-BY 4.0 </licence>
+                    </availability>
+
+            </publicationStmt>
+
+
+
+            <sourceDesc>
+                    <!--riporto le persone citate nella lettera-->
+                    <listPerson>
+                        <head>Persone citate nella lettera</head>
+                        <!--Vincenzo Bellini-->
+                        <person xml:id="VB" sameAs="http://viaf.org/viaf/39560983">
+
+                            <persName role="composer">
+                                <ref target="http://data.rism.info/id/rismauthorities/pe11648 http://www.treccani.it/enciclopedia/vincenzo-bellini_(Dizionario-Biografico) https://it.wikipedia.org/wiki/Vincenzo_Bellini"/>
+                                
+                                <forename>Vincenzo</forename>
+                                <forename>Salvatore</forename>
+                                <forename>Carmelo</forename>
+                                <forename>Francesco </forename> 
+                                <surname>Bellini</surname>
+                                <addName type="alias">Il Cigno</addName>
+							    <roleName type="honorific">Cavaliere della Legione d'onore</roleName> 
+                            </persName>
+                            <sex>M </sex>
+
+                            <birth>
+                                <date when="1801-11-03" cert="high">3 novembre 1801</date>
+                                <placeName ref="TEI-ListPlace.xml#CT">
+                                    <settlement type="municipality">Catania</settlement>
+								    <settlement type="provincia" key="CT">Catania</settlement>
+                                    <country key="IT">Italia</country>
+                                </placeName>
+                            </birth>
+
+                            <death>
+                                <date when="1835-09-23" cert="high">23 settembre 1835</date>
+                                <placeName ref="TEI-ListPlace.xml#Put">
+                                    <settlement type="municipality">Puteaux</settlement>
+                                    <settlement type="department" key="Paris">Paris</settlement>
+                                    <country key="FR">France</country>
+                                </placeName>
+
+                            </death>
+
+                        </person>
+
+
+
+
+                        <person xml:id="GBP" >
+                            <!--Giovanni Battista Perucchini-->
+                            <persName role="composer">
+                                <ref target="http://data.rism.info/id/rismauthorities/pe30006229 http://www.treccani.it/enciclopedia/giovanni-battista-perucchini_(Dizionario-Biografico)/"/>
+
+                                <forename>Giovanni</forename>
+                                <forename>Battista</forename>
+                                <surname>Perucchini</surname>
+                            </persName>
+                            <sex>M </sex>
+
+                            <birth>
+                                <date when="1784-06-08" cert="high">8 giugno 1784</date>
+                                <placeName ref="TEI-ListPlace.xml#BG">
+                                    <settlement type="municipality">Bergamo</settlement>
+                                    <settlement type="provincia" key="BG">Bergamo</settlement>
+                                    <country key="IT">Italia</country>
+                                </placeName>
+                            </birth>
+
+                            <death>
+                                <date when="1870-02-06" cert="high">6 febbraio 1870</date>
+                                <placeName ref="TEI-ListPlace.xml#VE">
+                                    <settlement type="municipality">Venezia</settlement>
+                                    <settlement type="provincia" key="VE">Venezia</settlement>
+                                    <country key="IT">Italia</country>
+                                </placeName>
+                            </death>
+
+                        </person>
+
+                        <!--Michele Carafa-->
+                        <person xml:id="MCa">
+
+                            <persName role="composer">
+                                <ref target="http://data.rism.info/id/rismauthorities/pe30000580 http://www.treccani.it/enciclopedia/michele-enrico-carafa_(Dizionario-Biografico) https://it.wikipedia.org/wiki/Michele_Carafa"/>
+                                <forename>Michele</forename>
+                                <forename>Enrico</forename>
+                                <forename>Francesco</forename>
+                                <forename>Vincenzo</forename>
+                                <forename>Aloisio</forename>
+                                <forename>Paolo</forename>
+                                <surname> Carafa</surname>
+                                <roleName type="honorific">Principe di Colobrano</roleName> 
+                                <roleName type="honorific">Duca di Alvito</roleName> 
+                                <roleName type="honorific">Barone del Regno di Italia</roleName> 
+                                <roleName type="honorific">Cavaliere della Legione d'onore</roleName> 
+                            </persName>
+                            <sex>M </sex>
+
+                            <birth>
+                                <date when="1787-11-28" cert="high">28 novembre 1787</date>
+                                <placeName ref="TEI-ListPlace.xml#NA">
+                                    <settlement type="municipality">Napoli</settlement>
+                                     <settlement type="provincia" key="NA">Napoli</settlement>
+                                    <country key="IT">Italia</country>
+                                </placeName>
+                            </birth>
+
+                            <death>
+                                <date when="1872-07-26" cert="high">26 luglio 1872</date>
+                                <placeName ref="TEI-ListPlace.xml#Paris">
+                                    <settlement type="municipality">Paris</settlement>
+                                    <settlement type="department" key="Paris">Paris</settlement>
+                                    <country key="FR">France</country>
+                                </placeName>
+                            </death>
+
+                            <note  resp="#GS" source="TEI-ListBibl.xml#Seminara2017" ana="505">
+
+                                <bibl><citedRange unit="page" from="308" to="308">308 </citedRange></bibl>
+
+                                <p> Figlio cadetto di Giovanni, principe di Colubrano e duca di Alvito.
+                                Studiò a Napoli con Fenaroli e a Parigi con Cherubini e raggiunse il successo con Gabriella di Vergy su libretto di Tottola, rappresentata al Teatro del Fondo di Napoli il 3 luglio 1816.
+                                Si impose quindi a Parigi con il “drame lyrique” Jeanne d’Arc à Orléans su libretto di Marie-Emmanuel Théaulon de Lambert e François Victor Armand d’Artois, messo in scena all’Opéra-comique il 10 marzo 1821.
+                                Nel 1834 assunse la cittadinanza francese, nel 1837 divenne direttore dell’Académie des Beaux-Arts e dal 1840 al 1858 tenne la cattedra di Contrappunto al Conservatorio di Parigi.
+                                </p>
+
+                            </note>
+
+                        </person>
+
+                    </listPerson>
+
+                    <!--riporto l'unico luogo citato nella lettera-->
+                    <listPlace>
+                        <head>Luoghi citati nella lettera</head>
+                        <place xml:id="Paris">
+                            <placeName ref="http://www.geonames.org/2988507 http://www.treccani.it/enciclopedia/parigi/">Paris</placeName>
+                            <country key="FR">France</country>
+                        </place>
+
+                    </listPlace>
+
+                        
+                    
+                    <bibl source="TEI-ListBibl.xml#Seminara2017" resp="#GS" ana="246">
+                        <citedRange unit="page" from="308" to="308"> 308 </citedRange>
+                    </bibl>
+
+                    <msDesc>
+                        <msIdentifier>
+                                <country> Italy</country>
+                                <settlement> Catania</settlement>
+                                <repository role="museum" ref="http://www.rism.info/typo3conf/ext/user_apachesolr/result.php?q=id:30003436" n="I-CATm">Museo Belliniano Catania</repository>
+                                <!-- riferimento al catalogo delle sigle dei musei in cui è definito I-CATm -->
+                                <idno type="inventory"> LL1.12 </idno> <!--segnatura della singola lettera-->
+                                <altIdentifier> <idno type="collocation"> In esposizione presso Casa Natale, sala B, vetrina 4, ripiano 1, I </idno> </altIdentifier>
+                                <!--collocazione della lettera al museo-->
+                        </msIdentifier>
+
+                        <msContents>
+                            <msItem> 
+                                    <author xml:lang="it" ref="TEI-ListPerson.xml#VB"> Vincenzo Bellini </author>
+
+                                    <title type="uniform" xml:lang="it">
+                                        <persName ref="TEI-ListPerson.xml#VB" role="composer"> Vincenzo Bellini </persName>a
+                                        <persName ref="unknown"> destinatario sconosciuto</persName>, in
+                                        <placeName ref="TEI-ListPlace.xml#Paris"> Parigi</placeName>,
+                                        <date when="1833-08-23" cert="high"> 23 agosto 1833</date>
+                                    </title>
+
+                                    <textLang mainLang="it"> Italiano di inizio Ottocento </textLang>
+                                    
+                            </msItem>
+                        </msContents>
+
+                        <physDesc>
+                            <objectDesc>
+                                <supportDesc>
+
+                                    <support>
+                                        <material> Carta sottile </material>
+                                        
+                                        <p xml:id="descLet"> <!--descrizione fisica della lettera-->
+                                            Lettera in buone condizioni fisiche, composta da un solo folio, piegato in più parti, con testo solo nel fronte recto. 
+                                            Carta sottile senza filigrana, colore beige, inchiostro nero.
+                                            In alto a sinistra nel fronte verso è presente un'annotazione a matita.
+                                        </p>
+                                    </support>
+
+                                    <extent>
+                                        <measure type="folio"> 1 </measure>
+                                        <dimensions unit="mm">
+                                            <height>199</height>
+                                            <width>132</width>
+                                        </dimensions>
+                                    </extent>
+
+                                    <foliation>
+                                        Il folio presenta segni di piegature simmetriche che lo dividono in quattro sezioni. 
+                                    </foliation>
+                                    
+                                    <condition><!-- descrizione delle condizioni fisiche di conservazione della lettera -->
+                                        <p>La lettera si è conservata in buone condizioni fisiche.</p>
+								    </condition>
+
+                                </supportDesc>
+                            </objectDesc>
+
+
+
+                            
+                            <handDesc hands="2">
+							    <handNote xml:id="h1">
+                                        <p>Scrittura a mano libera abbastanza leggibile. Il folio fronte, nella parte centrale e nella parte inferiore, presenta la scrittura di un'altra mano.</p>
+                                        
+                                </handNote>
+							    <handNote>								
+                                        <p> È presente la scrittura di prima mano di Michele Carafa.</p>       
+							    </handNote>
+						    </handDesc>
+
+                        </physDesc>
+
+                          
+                        <additional>
+                                <adminInfo>
+                                    <note><!-- descrizione del significato della segnatura della lettera -->
+                                        All'interno del carteggio belliniano (LL), la segnatura LL1.12 identifica la dodicesima missiva in ordine cronologico del primo sottogruppo, che corrisponde alle lettere scritte da Vincenzo Bellini.  
+                                    </note>
+                                </adminInfo>
+					    </additional>
+                    
+                    </msDesc>
+            </sourceDesc>
+        </fileDesc> 
+
+
+
+        <profileDesc>
+                <correspDesc>
+                        <correspAction type="sent">
+                            <persName ref="TEI-ListPerson.xml#VB" role="composer">Vincenzo Bellini</persName>
+                            <placeName  ref="TEI-ListPlace.xml#Paris" type="writing">Parigi</placeName>
+                            <date when="1833-08-23" type="writing" cert="high">23 agosto 1833</date>
+                        </correspAction>
+
+                        <correspAction type="received">
+                            <persName>Destinatario sconosciuto</persName>
+                        </correspAction>
+
+                        <correspContext>
+                            <p>Non è presente un contesto di riferimento</p>
+                        </correspContext>
+                </correspDesc>
+
+
+                <textClass><!-- soggettario della Biblioteca Nazionale di Firenze -->
+                        <keywords scheme="http://thes.bncf.firenze.sbn.it">
+                            <term resp="#GS">Lettera</term>
+                        </keywords>
+                </textClass>
+
+                <langUsage> 
+                        <language ident="it">Italiano di inizio Ottocento</language>
+                </langUsage>
+        </profileDesc>
+
+    
+    </teiHeader>
+
+
+    <facsimile>
+
+        <!--FRONTE RECTO-->
+        <surface n="1" xml:id="LL1.12_folio_1fr">
+
+                <graphic url="LL1.12_0001.jpg" width="1632px" height="2417px" /><!--dimensioni dell'intera pagina-->
+
+                <!--Corpo della lettera di Bellini-->
+                <zone ulx="59" uly="82" lrx="1588" lry="213" rendition="Line" xml:id="LL1.12_line_1fr_01"/>
+                <zone ulx="54" uly="192" lrx="1576" lry="337" rendition="Line" xml:id="LL1.12_line_1fr_02"/>
+                <zone ulx="59" uly="302" lrx="1586" lry="456" rendition="Line" xml:id="LL1.12_line_1fr_03"/>
+                <zone ulx="65" uly="409" lrx="463" lry="466" rendition="Line" xml:id="LL1.12_line_1fr_04"/>
+                <zone ulx="133" uly="491" lrx="680" lry="568" rendition="Line" xml:id="LL1.12_line_1fr_05"/>
+
+                <!--luogo e data-->
+                <zone ulx="53" uly="1491" lrx="1089" lry="1684" rendition="Line" xml:id="LL1.12_line_1fr_06"/>
+
+                <!--Parti dove è presente il messaggio di Michele Carafa-->
+                <zone ulx="610" uly="459" lrx="1567" lry="589" rendition="Line" xml:id="LL1.12_line_1fr_07"/>
+                <zone ulx="63" uly="581" lrx="1593" lry="1525" rendition="Line" xml:id="LL1.12_line_1fr_08"/>
+                <zone ulx="55" uly="1677" lrx="1601" lry="2372" rendition="Line" xml:id="LL1.12_line_1fr_09"/>
+               
+        </surface>
+
+
+        <!--RETRO RECTO-->
+        <surface n="2" xml:id="LL1.12_folio_1rr">
+                <graphic url="LL1.12_0002.jpg" width="1661px" height="2417px" />
+        </surface>
+
+        <!--RETRO VERSO-->
+        <surface n="3" xml:id="LL1.12_folio_1rv">
+                <graphic url="LL1.12_0003.jpg" width="1632px" height="2417px" />
+        </surface>
+
+
+        <!--FRONTE VERSO-->
+        <surface n="4" xml:id="LL1.12_folio_1fv">
+                <graphic url="LL1.12_0004.jpg" width="1632px" height="2417px" />
+
+                <!--annotazione illeggibile a matita in alto a sinistra-->
+                <zone ulx="72" uly="53" lrx="315" lry="136" rendition="Line" xml:id="LL1.12_line_1fv_01"/>
+        </surface>
+
+    </facsimile>
+
+
+
+    <text type="letter" xml:id="LL1.12" subtype="manuscript" n="LL1.12">
+
+            <body xml:lang="it">
+
+                <div type="fronte-recto"> <!--FRONTE RECTO-->
+
+                        <!--apertura della lettera mancante-->
+                        <div type="opener" n="o_01"> <gap reason="missing"/> </div>
+
+
+                        <pb n="1" xml:id="LL1.12_fol_1fr" facs="#LL1.12_folio_1fr"/>
+                        <!--corpo della lettera-->
+                        <div type="letter-body" n="t_01">
+                                
+                                <ab type="parag" n="ab_01">
+
+                                    <s type="sentence" n="s_01">
+
+                                        <lb xml:id="LL1.12_lb_1fr_01" n="1" facs="#LL1.12_line_1fr_01" />
+                                        Mi pare impossibile! Mi spiego? Già farai    
+                                          
+                                        <lb xml:id="LL1.12_lb_1fr_02" n="2" facs="#LL1.12_line_1fr_02" />
+                                        pel raccomandato dei qui nostri amici, ciò che hai
+                                   
+                                        <lb xml:id="LL1.12_lb_1fr_03" n="3" facs="#LL1.12_line_1fr_03" />
+                                        fatto <add place="above"><persName ref="TEI-ListPerson.xml#GBP"> mio caro Titta </persName></add> per gl'istessi: non è vero? 
+                                    
+                                        
+                                    </s>
+
+                                </ab>
+
+                        </div>
+                                     
+
+                        <!--CHIUSURA-->
+                        <div type="closer" n="c_01">
+                            <salute n="ab_02">
+
+                                    <s type="sentence" n="s_02">
+                                           
+                                        Addio
+
+                                        <lb xml:id="LL1.12_lb_1fr_04" n="4" facs="#LL1.12_line_1fr_04"/>
+                                        <persName ref="TEI-ListPerson.xml#GBP">mio Zerbino </persName>
+                                    </s>
+
+                                    <s type="sentence" n="s_03">
+
+                                        <lb xml:id="LL1.12_lb_1fr_05" n="5" facs="#LL1.12_line_1fr_05" />
+                                        <hi rend="align(left)"> Il tuo <persName ref="TEI-ListPerson.xml#VB" role="composer"> Bellini </persName></hi>
+
+                                    </s>
+                                
+                            </salute>
+
+                            <dateline n="ab_03">
+                                <s type="sentence" n="s_04">
+                                    <lb xml:id="LL1.12_lb_1fr_06" n="6" facs="#LL1.12_line_1fr_06"/>
+
+                                    <address>
+                                        <placeName ref="TEI-ListPlace.xml#Paris">Parigi</placeName>                     
+                                    </address>
+
+                                    <date when="1833-08-23">23 agosto 1833</date>
+                                </s>
+                            </dateline>
+
+                        </div>                                            
+
+                        
+                        <div type="paratext"> 
+                            <ab n="ab_04" type="paratext" hand="#h1" xml:id="LL1.12_hs_1fr01" facs="#LL1.12_line_1fr_07">
+                                
+                                <persName ref="TEI-ListPerson.xml#MCa">
+                                    Michele Carafa
+                                </persName>
+                            </ab>
+
+                        </div>
+
+                </div>
+
+
+
+                <div type="retro-recto"> <!--RETRO RECTO-->
+                    <pb n="2" xml:id="LL1.12_fol_1rr" facs="#LL1.12_folio_1rr"/>
+                </div>
+
+                <div type="retro-verso"> <!--RETRO VERSO-->
+                    <pb n="3" xml:id="LL1.12_fol_1rv" facs="#LL1.12_folio_1rv"/>
+                </div>
+
+                <div type="fronte-verso"> <!--FRONTE VERSO-->
+                    <pb n="4" xml:id="LL1.12_fol_1fv" facs="#LL1.12_folio_1fv"/>
+
+                    <!--annotazione illeggibile a matita in alto a sinistra-->
+                    <ab type="parag" n="ab_04">
+                        <unclear facs="#LL1.12_line_1fv_01"></unclear>
+                    </ab>
+                </div>
+
+
+
+            </body>
+
+              
+
+            <back>
+                    <div type="notes">
+                       
+                        <note xml:id="LL1_12_note1" resp="#GS">
+                            <p> Messaggio inserito in una lettera di <persName ref="TEI-ListPerson.xml#MCa"> Michele Carafa.</persName></p>  
+                        </note> 
+
+                        <note xml:id="LL1_12_note2" resp="#GS">
+                            <p>Lettera facente parte del Carteggio <persName ref="TEI-ListPerson.xml#GBP"> Perucchini</persName> e in esso precedentemente catalogata con la segnatura CP1.78 </p>                    
+                        </note>
+
+                    </div>
+
+
+
+                    <div type="bibliography">
+
+                        <listBibl xml:id="LL1_12_bibliography">
+
+                            <head>Bibliography of the letter LL1.12</head>
+                            <bibl xml:id="LL1_12_Neri">
+                                <ref target="TEI-ListBibl.xml#Neri2005">
+                                    <bibl>
+                                        <author>Neri</author>
+                                        <date when="2005">2005</date>
+                                        <citedRange unit="page" from="264" to="264"> 264</citedRange>
+                                    </bibl>
+                                </ref>
+                            </bibl>
+
+                        </listBibl>
+
+                    </div>
+
+
+            </back>
+
+    </text>
+
+
+</TEI>
